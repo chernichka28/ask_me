@@ -1,0 +1,23 @@
+body {
+  background: #03071E;
+  background-image: url("https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80");
+  background-position: center;
+  background-size: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 40px;
+  width: 100%;
+}
+
+.container {
+  background: rgb(199,203,219);
+  background: linear-gradient(0deg, rgba(199,203,219,1) 0%, rgba(249,245,234,1) 100%);
+  opacity: 0.98;
+  border-radius: 1.5rem;
+  margin-top: 10rem;
+  padding: 20px;
+}

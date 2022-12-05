@@ -1,0 +1,17 @@
+<div class="container">
+    <h2 class="title-lg mb">Вопрос <%= @question.id %></h2>
+
+    <p class="mb-sm"><%= @question.body %></p>
+    <p>user_id: <b><%= @question.user_id %></b></p>
+
+    <div class="mt icon">
+      <%= link_to fa_icon("edit"), edit_question_path(@question), title: "Изменить вопрос" %>
+      <%= button_to fa_icon("trash-o"), question_path(@question), method: :delete, title: "Удалить вопрос", data: { turbo_confirm: "Вы уверены, что хотите удалить вопрос?"} %>
+
+      <% unless @question.hidden %>
+        <%= button_to fa_icon("low-vision"), "#{question_path}/hide", method: :put, title: "Сделать скрытым", data: { turbo_confirm: "Вы уверены, что хотите скрыть вопрос?"} %>
+      <% end %>
+    </div>
+
+    <p class="mt"><%= link_to "Все вопросы", questions_path %></p>
+</div>
