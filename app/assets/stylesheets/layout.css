@@ -18,6 +18,19 @@ body {
   background: linear-gradient(0deg, rgba(199,203,219,1) 0%, rgba(249,245,234,1) 100%);
   opacity: 0.98;
   border-radius: 1.5rem;
-  margin-top: 10rem;
+  margin: 10rem 0 2rem;
+  padding: 10px 20px 10px;
+}
+
+.container-question {
+  background: rgb(199,203,219);
+  background: linear-gradient(0deg, rgba(199,203,219,1) 0%, rgba(249,245,234,1) 100%);
+  border: 2px solid #132774;
+  border-radius: 1.5rem;
+  margin-top: 0.5rem;
   padding: 20px;
+}
+
+.hide {
+  opacity: 0.5;
 }

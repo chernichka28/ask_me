@@ -1,0 +1,6 @@
+.question-footer {
+  border-top: 2px solid #002051;
+  display: flex;
+  padding-top: 10px;
+  justify-content: space-between;
+}

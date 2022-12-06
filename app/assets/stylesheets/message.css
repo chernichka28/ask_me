@@ -1,0 +1,11 @@
+.message {
+  border: 1px solid #d0d0d0;
+  padding: 10px 15px;
+}
+
+.message-notice {
+  background: rgb(199,203,219);
+  background: linear-gradient(0deg, rgba(199,203,219,1) 0%, rgba(249,245,234,1) 100%);
+  border-radius: 0.5rem;
+  font-weight: bold;
+}
