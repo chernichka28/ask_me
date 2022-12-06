@@ -5,7 +5,10 @@
 </div>
 
 <div>
-  <h2 class="title-lg mb container-question text-center">Все вопросы</h2>
+  <h2 class="title-lg mb container-question text-center">
+    <%= @questions.count %>
+    <%= inclination(@questions.count, "вопрос", "вопроса", "вопросов") %>
+  </h2>
 
   <% @questions.each do |question| %>
     <% if question.hidden %>
