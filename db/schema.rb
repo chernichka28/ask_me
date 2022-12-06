@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_054946) do
   create_table "questions", force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
-    t.boolean "hidden", default: false
+    t.boolean "hidden", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
