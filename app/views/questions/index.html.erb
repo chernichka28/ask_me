@@ -11,7 +11,7 @@
   </h2>
 
   <% @questions.each do |question| %>
-    <% if question.hidden %>
+    <% if question.hidden? %>
       <div class="container-question mb-sm hide">
         <%= render question %>
       </div>
@@ -22,4 +22,3 @@
     <% end %>
   <% end %>
 </div>
-
