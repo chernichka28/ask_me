@@ -1,0 +1,40 @@
+.theme-light .navbar {
+  background: rgb(199,203,219);
+  background: linear-gradient(0deg, rgba(199,203,219,1) 0%, rgba(249,245,234,1) 100%);
+}
+
+.theme-light .navbar .nickname {
+  font-weight: bold;
+}
+/*#########################################*/
+
+.theme-dark .navbar {
+  background: rgb(0,25,66);
+  background: linear-gradient(0deg, rgba(0,25,66,1) 79%, rgba(163,163,135,1) 100%);
+}
+
+.theme-dark .navbar .button-yellow {
+  background: rgb(199,203,219);
+  background: linear-gradient(0deg, rgba(199,203,219,1) 0%, rgba(249,245,234,1) 100%);
+}
+
+.theme-dark .navbar .nickname {
+  color: rgba(249,245,234,1);
+  font-weight: bold;
+}
+
+/*#########################################*/
+
+.theme-red .navbar {
+  background: rgb(157,5,11);
+  background: linear-gradient(0deg, rgba(157,5,11,1) 40%, rgba(201,201,148,1) 100%);
+}
+
+.theme-red .navbar .intro {
+  color: #ffba08;
+}
+
+.theme-red .navbar .nickname {
+  color: rgba(249,245,234,1);
+  font-weight: bold;
+}

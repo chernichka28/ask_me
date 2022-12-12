@@ -8,6 +8,10 @@
   text-decoration: none;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .button-main {
   background-color: #9D0208;
 }

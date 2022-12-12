@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resource :session, only: %i[new create destroy]
+  resource :session, only: %i[new create destroy update]
 
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create edit update destroy]
 end
