@@ -22,7 +22,8 @@ body {
   padding: 10px 20px 10px;
 }
 
-.container-question {
+.container-question,
+.navbar {
   background: rgb(199,203,219);
   background: linear-gradient(0deg, rgba(199,203,219,1) 0%, rgba(249,245,234,1) 100%);
   border: 2px solid #132774;
@@ -34,3 +35,15 @@ body {
 .hide {
   opacity: 0.5;
 }
+
+.navbar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+

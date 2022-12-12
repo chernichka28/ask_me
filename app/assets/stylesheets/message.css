@@ -9,3 +9,11 @@
   border-radius: 0.5rem;
   font-weight: bold;
 }
+
+.message-alert {
+  background: rgb(149,12,12);
+  background: linear-gradient(0deg, rgba(149,12,12,1) 53%, rgba(191,180,180,1) 100%);
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: #FFFFFF;
+}
