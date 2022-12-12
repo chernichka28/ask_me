@@ -12,12 +12,12 @@
 
   <body>
     <div class="wrapper">
-      <div class="navbar">
-        <p class="title-sm text-bold"><%= link_to "Ask_me!", root_path %></p>
+      <div class="navbar"> 
+        <p class="title text-bold mr-sm"><%= link_to "Ask me!", root_path %></p>
         <div>
           <% if current_user.present? %>
             <%= "@#{current_user.nickname}" %>
-            <%= button_to "Выйти", session_path, method: :delete, class: "button button-yellow" %>
+            <%= button_to "Выйти", session_path, method: :delete, class: "button button-yellow mr-sm" %>
           <% else %>
             <%= link_to "Регистрация", new_user_path, class: "button button-yellow mr-sm" %>
             <%= link_to "Вход", new_session_path, class: "button button-yellow" %>

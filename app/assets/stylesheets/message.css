@@ -11,8 +11,8 @@
 }
 
 .message-alert {
-  background: rgb(149,12,12);
-  background: linear-gradient(0deg, rgba(149,12,12,1) 53%, rgba(191,180,180,1) 100%);
+  background: rgb(157,2,8);
+  background: linear-gradient(0deg, rgba(157,2,8,1) 0%, rgba(172,118,118,1) 100%);
   border-radius: 0.5rem;
   font-weight: bold;
   color: #FFFFFF;
