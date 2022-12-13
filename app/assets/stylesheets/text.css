@@ -44,5 +44,5 @@ a, button {
 }
 
 .text-with-line-breaks {
-  white-space: pre-wrap;
+  white-space: pre-line;
 }
