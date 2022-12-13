@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
-  before_action :ensure_current_user, only: %i[update destroy edit hide]
-  before_action :set_question_for_current_user, only: %i[update destroy edit hide]
+  before_action :ensure_current_user, only: %i[update edit hide]
+  before_action :set_question_for_current_user, only: %i[update edit hide]
 
   def create
     question_params = params.require(:question).permit(:body, :user_id)
@@ -24,10 +24,10 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @user = @question.user
+    @question = Question.find(params[:id])
     @question.destroy
 
-    redirect_to user_path(@user), notice: "Вы удалили вопрос!"
+    redirect_to root_path, notice: "Вы удалили вопрос!"
   end
 
   def show
@@ -36,7 +36,7 @@ class QuestionsController < ApplicationController
 
   def index
     @question = Question.new
-    @questions = Question.all
+    @questions = Question.order("created_at DESC")
   end
 
   def new
