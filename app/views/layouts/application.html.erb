@@ -18,12 +18,12 @@
         </p>
         <div>
           <% if current_user.present? %>
-            <%= link_to nickname_with_at(current_user), edit_user_path(current_user), class: "mr nickname" %>
+            <%= link_to nickname_with_at(current_user), edit_user_path(current_user), class: "mr-sm nickname" %>
             <%= button_to "Выйти", session_path, method: :delete, class: "button button-yellow mr-sm" %>
             <%= button_to fa_icon("magic"), session_path, method: :patch, class: "button button-yellow mr-sm" %>
           <% else %>
             <%= link_to "Регистрация", new_user_path, class: "button button-yellow mr-sm" %>
-            <%= link_to "Вход", new_session_path, class: "button button-yellow" %>
+            <%= link_to "Вход", new_session_path, class: "button button-yellow mr-sm" %>
             <%= button_to fa_icon("magic"), session_path, method: :patch, class: "button button-yellow mr-sm" %>
           <% end %>
         </div>
