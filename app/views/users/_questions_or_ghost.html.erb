@@ -1,0 +1,25 @@
+<% if @questions.count == 0 %>
+    <h2 class="title mb container-question text-center">Упс, похоже здесь ещё нет вопросов! Будьте первым!</h2>
+    <div class="text-center empty">
+      <img src="https://i.gifer.com/M2J4.gif" alt="[ghost]">
+    </div>
+    
+  <% else %>
+    <h2 class="title-lg mb container-question text-center">
+      <%= @questions.count %>
+      <%= inclination(@questions.count, "вопрос", "вопроса", "вопросов") %>
+    </h2>
+
+    <% @questions.each do |question| %>
+      <% if question.hidden? %>
+        <div class="container-question mb-sm hide">
+          <%= render question %>
+        </div>
+      <% else %>
+        <div class="container-question mb-sm">
+          <%= render question %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+  
