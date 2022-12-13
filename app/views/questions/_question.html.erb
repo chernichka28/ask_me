@@ -2,17 +2,30 @@
   <%= question.body %>
 </div>
 
+<% if question.answer.present? %>
+  <div class="mb-sm text-red text-bold">
+    <%= question.answer %>
+  </div>
+<% end %>
+
 <div class="text-sm question-footer">
   <div class="text-gray">
     <%= l(question.created_at, format: :short) %>
   </div>
+  
+  <% if current_user == question.user %>
+    <div class="icon">
+      <% if question.answer.present? %>
+        <%= link_to fa_icon("edit"), edit_question_path(question), title: "Изменить вопрос" %>
+      <% else %>
+        <%= link_to fa_icon("reply"), edit_question_path(question), title: "Ответить на вопрос" %>
+      <% end %>
 
-  <div class="icon">
-    <%= link_to fa_icon("edit"), edit_question_path(question), title: "Изменить вопрос" %>
-    <%= button_to fa_icon("trash-o"), question_path(question), method: :delete, title: "Удалить вопрос", data: { turbo_confirm: "Вы уверены, что хотите удалить вопрос?" } %>
+      <%= button_to fa_icon("trash-o"), question_path(question), method: :delete, title: "Удалить вопрос", data: { turbo_confirm: "Вы уверены, что хотите удалить вопрос?" } %>
 
-    <% unless question.hidden? %>
-      <%= button_to fa_icon("low-vision"), hide_question_path(question), method: :put, title: "Сделать скрытым", data: { turbo_confirm: "Вы уверены, что хотите скрыть вопрос?" } %>
-    <% end %> 
-  </div>
+      <% unless question.hidden? %>
+        <%= button_to fa_icon("low-vision"), hide_question_path(question), method: :put, title: "Сделать скрытым", data: { turbo_confirm: "Вы уверены, что хотите скрыть вопрос?" } %>
+      <% end %> 
+    </div>
+  <% end %>
 </div>

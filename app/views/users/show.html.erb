@@ -1,0 +1,38 @@
+<div class="user-box mt-lg">
+  <h2 class="title-lg mt-lg"><%= @user.name %></h2>
+
+  <% if current_user == @user %>
+    <p class="mt mb">
+      <%= link_to fa_icon("pencil"), edit_user_path(@user) %>
+    </p>
+  <% end %>
+
+  <p class="text-bold mt mb-lg"><%= nickname_with_at(@user) %></p>
+</div>
+
+<div class="container">
+  <%= link_to "Спроси меня", new_question_path(user_id: @user.id), class: "button button-yellow" %>
+
+  <p class="mt text-center mb">
+    <%= render "questions/form", question: @question %>
+  </p>
+</div>
+
+<div>
+  <h2 class="title-lg mb container-question text-center">
+    <%= @questions.count %>
+    <%= inclination(@questions.count, "вопрос", "вопроса", "вопросов") %>
+  </h2>
+
+  <% @questions.each do |question| %>
+    <% if question.hidden? %>
+      <div class="container-question mb-sm hide">
+        <%= render question %>
+      </div>
+    <% else %>
+      <div class="container-question mb-sm">
+        <%= render question %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
