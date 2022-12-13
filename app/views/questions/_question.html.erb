@@ -10,7 +10,15 @@
 
 <div class="text-sm question-footer">
   <div class="text-gray">
-    <%= l(question.created_at, format: :short) %>
+    <p>
+      <%= l(question.created_at, format: :short) %>
+      Вопрос задал
+      <% if question.author == nil %>
+        Аноним
+      <% else %>
+        <%= link_to nickname_with_at(question.author), user_path(question.author), class: "mr-sm nickname" %>
+      <% end %>
+    </p>
   </div>
   
   <% if current_user == question.user %>
