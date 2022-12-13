@@ -9,13 +9,18 @@
 /*#########################################*/
 
 .theme-dark .navbar {
-  background: rgb(0,25,66);
-  background: linear-gradient(0deg, rgba(0,25,66,1) 79%, rgba(163,163,135,1) 100%);
+  background: rgb(21,50,107);
+  background: linear-gradient(0deg, rgba(21,50,107,1) 0%, rgba(118,120,121,1) 100%);
+}
+
+.theme-dark .navbar a {
+  color: #FFFFFF;
 }
 
 .theme-dark .navbar .button-yellow {
   background: rgb(199,203,219);
   background: linear-gradient(0deg, rgba(199,203,219,1) 0%, rgba(249,245,234,1) 100%);
+  color: #000000;
 }
 
 .theme-dark .navbar .nickname {
@@ -25,16 +30,16 @@
 
 /*#########################################*/
 
-.theme-red .navbar {
-  background: rgb(157,5,11);
-  background: linear-gradient(0deg, rgba(157,5,11,1) 40%, rgba(201,201,148,1) 100%);
+.theme-blue .navbar {
+  background: rgb(21,50,107);
+    background: linear-gradient(0deg, rgba(21,50,107,1) 40%, rgba(33,164,255,1) 100%);
 }
 
-.theme-red .navbar .intro {
+.theme-blue .navbar .intro {
   color: #ffba08;
 }
 
-.theme-red .navbar .nickname {
+.theme-blue .navbar .nickname {
   color: rgba(249,245,234,1);
   font-weight: bold;
 }

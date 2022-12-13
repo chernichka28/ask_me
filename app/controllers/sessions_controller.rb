@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
     if session[:theme] == "light"
       session[:theme] = "dark"
     elsif session[:theme] == "dark"
-      session[:theme] = "red"
+      session[:theme] = "blue"
     else
       session[:theme] = "light"
     end

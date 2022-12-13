@@ -42,3 +42,7 @@ a, button {
 .text-bold {
   font-weight: bold;
 }
+
+.text-with-line-breaks {
+  white-space: pre-wrap;
+}
