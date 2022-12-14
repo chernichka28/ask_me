@@ -11,8 +11,12 @@
   </head>
 
   <body>
-    <div class="wrapper theme-<%= session[:theme] %>">
-      <div class="navbar"> 
+    <div class="wrapper">
+      <% if current_user.present? %>
+        <div class="navbar" style="background-color: <%= current_user.color %>;"> 
+      <% else %>
+        <div class="navbar" style="background-color: #dfe0e2;"> 
+      <% end %>
         <p class="title text-bold mr-sm">
           <%= link_to "Ask me!", root_path, class: "intro" %>  
         </p>
@@ -20,11 +24,9 @@
           <% if current_user.present? %>
             <%= link_to nickname_with_at(current_user), user_path(current_user), class: "mr-sm nickname" %>
             <%= button_to "Выйти", session_path, method: :delete, class: "button button-yellow mr-sm" %>
-            <%= button_to fa_icon("magic"), session_path, method: :patch, class: "button button-yellow mr-sm" %>
           <% else %>
             <%= link_to "Регистрация", new_user_path, class: "button button-yellow mr-sm" %>
             <%= link_to "Вход", new_session_path, class: "button button-yellow mr-sm" %>
-            <%= button_to fa_icon("magic"), session_path, method: :patch, class: "button button-yellow mr-sm" %>
           <% end %>
         </div>
       </div>

@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      session[:theme] = "light"
 
       redirect_to root_path, notice: "Вы успешно зарегистрировались и вошли!"
     else
@@ -26,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.save
+    if @user.update(user_params)
       redirect_to root_path, notice: "Ваши данные обновлены!"
     else
       flash.now[:alert] = "При попытке сохранить измнения возникли ошибки."
@@ -59,6 +58,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation, :color)
   end
 end

@@ -26,6 +26,9 @@
       <p class="mt"><%= form.label :password_confirmation %></p>
       <p><%= form.password_field :password_confirmation, class: "form-text-field" %></p>
 
+      <p class="mt"><%= form.label :header_background_color %></p>
+      <p><%= form.color_field :color, class: "form-color-field mt" %></p>
+
       <p><%= form.submit "Зарегистрироваться", class: "button button-main mt-lg" %></p>
     <% end %>
   </div>

@@ -4,7 +4,9 @@ class QuestionsController < ApplicationController
 
   def create
     question_params = params.require(:question).permit(:body, :user_id)
-    question_params[:author_id] = current_user.id
+    if current_user.present?
+      question_params[:author_id] = current_user.id
+    end
     @question = Question.create(question_params)
     @user = User.find(params[:question][:user_id])
 

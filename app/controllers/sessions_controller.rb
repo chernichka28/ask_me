@@ -25,14 +25,5 @@ class SessionsController < ApplicationController
   end
 
   def update
-    if session[:theme] == "light"
-      session[:theme] = "dark"
-    elsif session[:theme] == "dark"
-      session[:theme] = "blue"
-    else
-      session[:theme] = "light"
-    end
-
-    redirect_to root_path
   end
 end
