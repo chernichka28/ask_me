@@ -7,8 +7,8 @@ class QuestionsController < ApplicationController
     if current_user.present?
       question_params[:author_id] = current_user.id
     end
+    Question.new(question_params)
     @question = Question.create(question_params)
-    @user = User.find(params[:question][:user_id])
 
     if @question.save
       redirect_to user_path(@question.user), notice: "Вы создали новый вопрос!"
@@ -44,8 +44,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
-    @question = Question.new(user: @user)
+    @question = Question.new(user_id: params[:user_id])
   end
 
   def edit
