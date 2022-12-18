@@ -6,7 +6,8 @@ class User < ApplicationRecord
   before_validation :downcase_nickname, :downcase_email
 
   validates :email, presence: true, uniqueness: true, format: { with: /\A[\w\.-]+@[A-Za-z\d\-\.+]+\.[a-z]+\z/}
-  validates :nickname, presence: true, uniqueness: true, length: { maximum: 40 }, format: { with: /\A[A-Za-z_\d]+\z/}
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 40 }, format: { with: /\A[A-Za-z_\d]+\z/i}
+  validates :color, format: { with: /\A#[a-f\d]{6}\z/}
 
   private
 
