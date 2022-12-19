@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  def to_param
+    nickname
+  end
+
   has_many :questions, dependent: :delete_all
 
   has_secure_password
