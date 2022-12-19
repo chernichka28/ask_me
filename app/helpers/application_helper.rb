@@ -1,6 +1,6 @@
 module ApplicationHelper
   def inclination(count, form1, form2, form3)
-    return many if (count % 100).between?(11, 14)
+    return form3 if (count % 100).between?(11, 14)
 
     case count % 10
     when 1 then form1
