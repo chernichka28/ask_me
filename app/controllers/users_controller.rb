@@ -54,7 +54,13 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find_by(nickname: params[:nickname])
+    if User.find_by(nickname: params[:nickname]).present?
+      @user = User.find_by(nickname: params[:nickname])
+    else
+      flash[:alert] = "Такого пользователя, увы, нет!"
+
+      redirect_to root_path
+    end
   end
 
   def user_params
