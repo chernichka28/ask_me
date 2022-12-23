@@ -1,10 +1,10 @@
 <div class="mb-sm text-with-line-breaks">
-  <%== question.body.gsub(/#[\wА-Яа-я\-]+/i) { |h|  link_to h, hashtag_path(Hashtag.find_by(name: h)) } %>
+  <%== question.body.gsub(/#[\wА-Яа-я\-]+/i) { |h|  link_to h, hashtag_path(Hashtag.find_by(name: h.downcase)) } %>
 </div>
 
 <% if question.answer.present? %>
   <div class="mb-sm text-red text-bold">
-    <%== question.answer.gsub(/#[\wА-Яа-я\-]+/i) { |h|  link_to h, hashtag_path(Hashtag.find_by(name: h)) } %>
+    <%== question.answer.gsub(/#[\wА-Яа-я\-]+/i) { |h|  link_to h, hashtag_path(Hashtag.find_by(name: h.downcase)) } %>
   </div>
 <% end %>
 
