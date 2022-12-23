@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 class="title-lg mb text-center">
+    Все вопросы с хэштэгом <%= @hashtag.name %>
+  </h2>
+  
+   <% @questions_with_this_hashtag.each do |question| %>
+    <div class="container-question mb-sm <%= "hide" if question.hidden? %>">
+      <p class="mb text-sm text-grey">
+        Вопрос <%= link_to "##{question.id}", question_path(question) %>
+        для юзера <%= link_to "@#{question.user.nickname}", user_path(question.user) %>
+      </p>
+
+      <%= render question %>
+    </div>
+  <% end %>
+</div>

@@ -7,21 +7,30 @@ class QuestionsController < ApplicationController
     if current_user.present?
       question_params[:author_id] = current_user.id
     end
-    Question.new(question_params)
-    @question = Question.create(question_params)
+    @question = Question.new(question_params)
+
+    hashtags_arr = @question.body.scan(/#[\wА-Яа-я\-]+/i)
+    hashtags_arr = hashtags_arr.map { |h| h.downcase }
 
     if @question.save
+      @question.hashtags = set_hashtags_arr(hashtags_arr) unless hashtags_arr.empty?
+
       redirect_to user_path(@question.user), notice: "Вы создали новый вопрос!"
     else
       flash.now[:alert] = "Вы неправильно заполнили поля формы вопроса!"
 
       render :new
     end
-
   end
 
   def update
     question_params = params.require(:question).permit(:body, :answer)
+
+    hashtags_arr = question_params[:body].scan(/#[\wА-Яа-я\-]+/i)
+    hashtags_arr += question_params[:answer].scan(/#[\wА-Яа-я\-]+/i)
+    hashtags_arr = hashtags_arr.map { |h| h.downcase }
+    question_params[:hashtags] = set_hashtags_arr(hashtags_arr) unless hashtags_arr.empty?
+
     @question.update(question_params)
 
     redirect_to user_path(@question.user), notice: "Вы изменили вопрос!"
@@ -65,5 +74,11 @@ class QuestionsController < ApplicationController
 
   def set_question_for_current_user
     @question = current_user.questions.find(params[:id])
+  end
+
+  def set_hashtags_arr(arr)
+    arr.map do |h|
+      Hashtag.find_or_create_by(name: h)
+    end
   end
 end
