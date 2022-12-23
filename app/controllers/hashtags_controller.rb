@@ -11,7 +11,7 @@ class HashtagsController < ApplicationController
 
   private
     def check_data
-      @hashtag.destroy if Hashtag.find(params[:id]).questions.count == 0
+      Hashtag.find(params[:id]).destroy if Hashtag.find(params[:id]).questions.count == 0
       @hashtag = Hashtag.find(params[:id])
       @questions_with_this_hashtag = @hashtag.questions.uniq
     end
