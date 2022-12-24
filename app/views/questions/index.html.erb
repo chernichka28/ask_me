@@ -13,7 +13,7 @@
 <div class="container-question">
   <p>
     <% Hashtag.all.each do |h| %>
-      <%= link_to h.name, hashtag_path(h) %> 
+      <%= link_to h.name, hashtag_path(h) unless h.questions.empty? %> 
     <% end %>
   </p>
 </div>

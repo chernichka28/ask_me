@@ -1,5 +1,5 @@
 class HashtagsController < ApplicationController
-  before_action :check_data, only: [:show]
+  before_action :set_hashtag, only: [:show]
 
   def show
   end
@@ -10,8 +10,7 @@ class HashtagsController < ApplicationController
   end
 
   private
-    def check_data
-      Hashtag.find(params[:id]).destroy if Hashtag.find(params[:id]).questions.count == 0
+    def set_hashtag
       @hashtag = Hashtag.find(params[:id])
       @questions_with_this_hashtag = @hashtag.questions.uniq
     end
