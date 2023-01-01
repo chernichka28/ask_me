@@ -10,14 +10,14 @@ class Question < ApplicationRecord
   private
 
   def set_hashtags
-    hashtags = self.body.scan(/#[\wА-Яа-я\-]+/i)
-    hashtags += self.answer.scan(/#[\wА-Яа-я\-]+/i) if self.answer.present?
-    hashtags = hashtags.map do |hashtag|
-      hashtag = hashtag.downcase
-      Hashtag.find_or_create_by(name: hashtag)
-    end
     self.hashtags.delete_all
-    QuestionHashtag.where(question_id: self.id).delete_all
-    self.hashtags = hashtags
+    QuestionHashtag.where(question_id: id).delete_all
+
+    new_hashtags = body.scan(Hashtag.regex)
+    new_hashtags += answer.scan(Hashtag.regex) if answer.present?
+
+    self.hashtags = new_hashtags.map do |hashtag|
+      Hashtag.find_or_create_by(name: hashtag.downcase)
+    end
   end
 end
