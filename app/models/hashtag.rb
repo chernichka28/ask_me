@@ -1,5 +1,5 @@
 class Hashtag < ApplicationRecord
-  @@regex = (/#[\p{L}\d_]+/).freeze
+  REGEX = (/#[\p{L}\d_]+/).freeze
   cattr_reader :regex
 
   has_many :question_hashtags
