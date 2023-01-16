@@ -5,7 +5,7 @@ class Question < ApplicationRecord
   has_many :hashtags, through: :question_hashtags
 
   validates :body, presence: true, length: { maximum: 280 }
-  after_save :set_hashtags
+  after_save_commit :set_hashtags
 
   private
 
