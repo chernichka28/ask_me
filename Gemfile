@@ -22,6 +22,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
+group :production do
+  gem "pg"
+end
+
 group :development do
   gem "web-console"
 end
