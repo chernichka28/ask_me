@@ -1,24 +1,36 @@
-# README
+# Ask-me
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
+Social networking site where users create profiles and can send each other questions. Anonymous questions are also possible.
 
-Things you may want to cover:
+There is a customization of the user page. User can change nav background color.
 
-* Ruby version
+For the convenience of users, hashtags service is used.
 
-* System dependencies
+Implemented in Ruby 3.1.2, Rails 7.0.4
 
-* Configuration
+Language: Russian.
 
-* Database creation
+## Example
+[Ask-me](http://ask-me.borissoff.ru/)
 
-* Database initialization
+## Launching
+Download or clone repo. Use bundler
+```
+bundle install
+```
+Create database
+```
+rails db:create
+```
+Run database migrations
+```
+rails db:migrate
+```
 
-* How to run the test suite
+For Rails server starting, type
+```
+rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<sub>Educational project</sub>
