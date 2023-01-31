@@ -19,16 +19,18 @@
 ```
 bundle install
 ```
-3. Создаем БД
+3. Используйте свои `credentials.yml.enc` и `master.key`. Создайте свой `database.yml` по примеру `database.yml.example`
+
+4. Создаем БД
 ```
 rails db:create
 ```
-4. Миграции
+5. Миграции
 ```
 rails db:migrate
 ```
 
-5. Для запуска сервера
+6. Для запуска сервера
 ```
 rails s
 ```
