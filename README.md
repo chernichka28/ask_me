@@ -1,36 +1,36 @@
 # Ask-me
 
 ## Description
-Social networking site where users create profiles and can send each other questions. Anonymous questions are also possible.
+Сайт, на котором пользователь может зарегистрироваться и любые вопросы другим юзерам, можно задать анонимный вопрос.
 
-There is a customization of the user page. User can change nav background color.
+Присутствует небольшая кастомизация: можно выбрать цвет шапки сайта.
 
-For the convenience of users, hashtags service is used.
+Есть рабочие хэштэши!
 
-Implemented in Ruby 3.1.2, Rails 7.0.4
+Создано на Ruby 3.1.2, Rails 7.0.4
 
-Language: Russian.
-
-## Example
+## Пример работы
 [Ask-me](http://ask-me.borissoff.ru/)
 
-## Launching
-Download or clone repo. Use bundler
+## Установка
+Скачайте или склонируйте репозиторий 
+
+Bundler
 ```
 bundle install
 ```
-Create database
+Создаем БД
 ```
 rails db:create
 ```
-Run database migrations
+Миграции
 ```
 rails db:migrate
 ```
 
-For Rails server starting, type
+Для запуска сервера
 ```
 rails s
 ```
 
-<sub>Educational project</sub>
+<sub>Учебный проект</sub>
