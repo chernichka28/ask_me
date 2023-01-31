@@ -23,12 +23,12 @@ bundle install
 ```
 rails db:create
 ```
-3. Миграции
+4. Миграции
 ```
 rails db:migrate
 ```
 
-4. Для запуска сервера
+5. Для запуска сервера
 ```
 rails s
 ```
