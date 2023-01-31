@@ -19,7 +19,10 @@
 ```
 bundle install
 ```
-3. Используйте свои `credentials.yml.enc` и `master.key`. Создайте свой `database.yml` по примеру `database.yml.example`
+3. Используйте свой `master.key` и свои данные для `database.yml`
+```
+cp config/database.yml.example config/database.yml
+```
 
 4. Создаем БД
 ```
