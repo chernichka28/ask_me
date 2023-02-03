@@ -12,7 +12,7 @@ class Question < ApplicationRecord
   def set_hashtags
     self.hashtags =
       "#{body} #{answer}".downcase.scan(Hashtag::REGEX).uniq.map do |hashtag|
-        Hashtag.find_or_create_by(name: hashtag.downcase)
+        Hashtag.find_or_create_by(name: hashtag.downcase.delete("#"))
       end
   end
 end

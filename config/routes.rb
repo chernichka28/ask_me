@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :hashtags, only: [:show]
+  resources :hashtags, only: [:show], param: :name
   root to: "questions#index"
 
   resources :questions do
